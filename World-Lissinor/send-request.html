@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send POST Request</title>
+</head>
+<body>
+    <script>
+        // Replace with your laptop's IP address and port
+        const url = 'http://YOUR_LAPTOP_IP:5000/ajax/browser_error_reports/?device_level=unknown&brsid=7466330058659552850';
+
+        const data = [
+            {
+                "age": 13654,
+                "body": {
+                    "columnNumber": 369,
+                    "disposition": "enforce",
+                    "lineNumber": 235,
+                    "message": "Permissions policy violation: unload is not allowed in this document.",
+                    "policyId": "unload",
+                    "sourceFile": "http://YOUR_LAPTOP_IP:5000/your_script.js"  // Replace with your actual script URL if needed
+                },
+                "type": "permissions-policy-violation",
+                "url": "https://www.facebook.com/instagram/login_sync/",
+                "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+            }
+        ];
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/reports+json',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Priority': 'u=4, i'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => console.log('Success:', data))
+        .catch((error) => console.error('Error:', error));
+    </script>
+</body>
+</html>

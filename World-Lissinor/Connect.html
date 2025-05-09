@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaction Monitor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interaction Monitor</h1>
+    <button id="startButton">Start Monitoring</button>
+    <p id="status">Status: Idle</p>
+
+    <script>
+        const PARENT_IP = '192.168.1.100';  // Replace with the actual IP address of the parent system
+        const PARENT_PORT = 8778;
+
+        document.getElementById('startButton').addEventListener('click', () => {
+            document.getElementById('status').innerText = 'Status: Monitoring...';
+            monitorInteractions();
+        });
+
+        function sendSignalToParent() {
+            // Simulate sending a signal to the parent system
+            console.log(`Sending signal to ${PARENT_IP}:${PARENT_PORT}`);
+            // You can use fetch or XMLHttpRequest to send a request to a server
+        }
+
+        function monitorInteractions() {
+            setInterval(() => {
+                // Simulate interaction detection
+                console.log('Interaction detected');
+                sendSignalToParent();
+                document.getElementById('status').innerText = 'Status: Interaction detected and signal sent';
+            }, 5000);  // Adjust the interval as needed
+        }
+    </script>
+</body>
+</html>

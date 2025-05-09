@@ -1,0 +1,11 @@
+POST /ajax/browser_error_reports/?device_level=unknown&brsid=7466330058659552850 HTTP/2
+Host: www.example.com
+Cookie: fr=0TH3H5rMhCW6hjB3l.AWX1NkAnrIWc4Vv6wWgU80NsFIH-RuPhJPo39Q.BnlFzv..AAA.0.0.Bnnbuc.AWWQonrSDdE
+Content-Length: 481
+Content-Type: application/reports+json
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Priority: u=4, i
+
+[{"age":13654,"body":{"columnNumber":369,"disposition":"enforce","lineNumber":235,"message":"Permissions policy violation: unload is not allowed in this document.","policyId":"unload","sourceFile":"{--URL}"},"type":"permissions-policy-violation","url":"https://www.facebook.com/instagram/login_sync/","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"}]
